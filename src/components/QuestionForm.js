@@ -1,27 +1,8 @@
 import React, { useState } from "react";
 
-function QuestionForm(props) {
-  const [formData, setFormData] = useState({
-    prompt: "",
-    answer1: "",
-    answer2: "",
-    answer3: "",
-    answer4: "",
-    correctIndex: 0,
-  });
-
-  function handleChange(event) {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(formData);
-  }
-
+function QuestionForm({handleChange, handleSubmit, formData}) {
+  
+ 
   return (
     <section>
       <h1>New Question</h1>
@@ -33,6 +14,7 @@ function QuestionForm(props) {
             name="prompt"
             value={formData.prompt}
             onChange={handleChange}
+            id="prompt"
           />
         </label>
         <label>
@@ -42,6 +24,7 @@ function QuestionForm(props) {
             name="answer1"
             value={formData.answer1}
             onChange={handleChange}
+            id="answer1"
           />
         </label>
         <label>
@@ -51,6 +34,7 @@ function QuestionForm(props) {
             name="answer2"
             value={formData.answer2}
             onChange={handleChange}
+            id="answer2"
           />
         </label>
         <label>
@@ -60,6 +44,7 @@ function QuestionForm(props) {
             name="answer3"
             value={formData.answer3}
             onChange={handleChange}
+            id="answer3"
           />
         </label>
         <label>
@@ -69,6 +54,7 @@ function QuestionForm(props) {
             name="answer4"
             value={formData.answer4}
             onChange={handleChange}
+            id="answer4"
           />
         </label>
         <label>
